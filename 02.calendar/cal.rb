@@ -1,5 +1,7 @@
 require 'date'
 require "optparse"
+Option_Year=Date.today.year
+Option_Month=Date.today.month
 opts = OptionParser.new
 opts.on("-y", "--year N1", Integer){|w1|
   Option_Year = w1
