@@ -1,7 +1,7 @@
 require 'date'
 a=Date.new(1997, 2, 1)
-print a.strftime('%B')+" "+"#{a.year}"
-print "Su Mo Tu We Th Fr Sa"
+puts "   "+a.strftime('%B')+" "+"#{a.year}"
+puts "Su Mo Tu We Th Fr Sa"
 a.cwday.times do
   print"   "
 end
