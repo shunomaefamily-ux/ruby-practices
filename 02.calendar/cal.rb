@@ -5,6 +5,9 @@ a.cwday.times do
 end
 days_in_month = a.next_month.jd - a.jd
 days_in_month.times do
+  if a.day<10
+  print " "
+  end
 if a.cwday==6
   puts "#{a.day}"
   elsif a.day==days_in_month
