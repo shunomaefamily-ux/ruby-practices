@@ -1,6 +1,7 @@
 require 'date'
 a=Date.new(1997, 2, 1)
-puts "   "+a.strftime('%B')+" "+"#{a.year}"
+Month_and_Year = a.strftime('%B')+" "+"#{a.year}"
+puts Month_and_Year.center(20)
 puts "Su Mo Tu We Th Fr Sa"
 a.cwday.times do
   print"   "
