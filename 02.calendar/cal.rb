@@ -1,7 +1,7 @@
 require 'date'
 a=Date.new(1997, 2, 1)
 a.cwday.times do
-  print"  "
+  print"   "
 end
 days_in_month = a.next_month.jd - a.jd
 days_in_month.times do
