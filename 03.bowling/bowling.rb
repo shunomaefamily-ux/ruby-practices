@@ -14,7 +14,6 @@ end
 extra_sum=0
 a=0
 9.times do
-  puts shots[a]
   if shots[a]==10
     extra_sum = extra_sum + shots[a+1] + shots[a+2]
     a+=1
@@ -23,14 +22,8 @@ a=0
     if shots[a] + shots[a+1] == 10
     extra_sum = extra_sum + shots[a+2]
     end
-    a+=1
-    puts shots[a]
-    a+=1
+    a+=2
   end
 end
 
-
-puts shots[a]
-puts shots[a+1]
-puts shots[a+2]
 puts extra_sum + shots.sum
