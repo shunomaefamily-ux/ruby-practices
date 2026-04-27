@@ -1,8 +1,9 @@
+#!/usr/bin/env ruby
+
 score = ARGV[0]
-
 scores = score.split(',')
-
 shots = []
+
 scores.each do |s|
   if s == 'X' # strike
     shots << 10
