@@ -5,6 +5,7 @@
       puts "Fizz"
     elsif x%5==0
       puts "Buzz"
-    else puts "#{x}"
+    else
+      puts "#{x}"
   end
 end
