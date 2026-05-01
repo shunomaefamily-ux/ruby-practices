@@ -22,11 +22,12 @@ end
 days_in_month = day_of_this_month.next_month.jd - day_of_this_month.jd
 days_in_month.times do
   if day_of_this_month.cwday == 6
-  puts day_of_this_month.strftime('%e')
-    elsif day_of_this_month.day == days_in_month
     puts day_of_this_month.strftime('%e')
+    elsif
+      day_of_this_month.day == days_in_month
+      puts day_of_this_month.strftime('%e')
     else
-    print day_of_this_month.strftime('%e')+" "
+      print day_of_this_month.strftime('%e')+" "
   end
   day_of_this_month += 1
 end
