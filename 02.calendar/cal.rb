@@ -13,8 +13,8 @@ opts.on('-m', '--month input_month', Integer) do |optioned_month|
 end
 opts.parse!(ARGV)
 day_of_this_month = Date.new(option_year, option_month, 1)
-month_and_Year = day_of_this_month.strftime('%B') + ' ' + "#{day_of_this_month.year}"
-puts month_and_Year.center(20)
+month_and_year = day_of_this_month.strftime('%B') + ' ' + "#{day_of_this_month.year}"
+puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
 day_of_this_month.cwday.times do
   print '   '
