@@ -1,5 +1,7 @@
 require 'date'
-require "optparse"
+
+require 'optparse'
+
 option_year=Date.today.year
 option_month=Date.today.month
 opts = OptionParser.new
