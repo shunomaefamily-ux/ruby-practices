@@ -1,11 +1,11 @@
-1.upto(20) do |x|
-  if x % 15 == 0
+1.upto(20) do |i|
+  if i % 15 == 0
     puts "FizzBuzz"
-  elsif x % 3 == 0
+  elsif i % 3 == 0
     puts "Fizz"
-  elsif x % 5 == 0
+  elsif i % 5 == 0
     puts "Buzz"
   else
-    puts "#{x}"
+    puts "#{i}"
   end
 end
