@@ -1,15 +1,11 @@
 require 'date'
 require 'optparse'
 
-option_year = Date.today.year
-option_month = Date.today.month
+year = Date.today.year
+month = Date.today.month
 opts = OptionParser.new
-opts.on('-y', '--year input_year', Integer) do |optioned_year|
-  option_year = optioned_year
-end
-opts.on('-m', '--month input_month', Integer) do |optioned_month|
-  option_month = optioned_month
-end
+opts.on('-y', '--year input_year', Integer) { |y| year = y }
+opts.on('-m', '--month input_month', Integer) { |m| month = m }
 opts.parse!(ARGV)
 day_of_this_month = Date.new(option_year, option_month, 1)
 month_and_year = day_of_this_month.strftime('%B') + ' ' + "#{day_of_this_month.year}"
