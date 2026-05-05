@@ -1,5 +1,4 @@
 require 'date'
-
 require 'optparse'
 
 option_year = Date.today.year
