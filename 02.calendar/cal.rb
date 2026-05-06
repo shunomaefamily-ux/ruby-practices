@@ -15,11 +15,11 @@ puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
 calender_week_day = day_of_this_month.cwday % 7
 calender_week_day.times { print '   ' }
-days_in_month = day_of_this_month.next_month.jd - day_of_this_month.jd
-days_in_month.times do
+days_in_month = Date.new(year, month, -1) - day_of_this_month
+days_in_month.to_i.times do
   if day_of_this_month.cwday == 6
     puts day_of_this_month.strftime('%e')
-  elsif day_of_this_month.day == days_in_month
+  elsif day_of_this_month.day == days_in_month.to_i
     puts day_of_this_month.strftime('%e')
   else
     print day_of_this_month.strftime('%e') + " "
