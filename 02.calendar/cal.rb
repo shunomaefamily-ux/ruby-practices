@@ -9,20 +9,21 @@ opts = OptionParser.new
 opts.on('-y', '--year input_year', Integer) { |y| year = y }
 opts.on('-m', '--month input_month', Integer) { |m| month = m }
 opts.parse!(ARGV)
-day_of_this_month = Date.new(year, month, 1)
-month_and_year = "#{day_of_this_month.strftime('%B')} #{day_of_this_month.year}"
+first_date = Date.new(year, month, 1)
+last_day = Date.new(year, month, -1)
+month_and_year = "#{ first_date.strftime('%B') } #{ first_date.year }"
 puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
-calender_week_day = day_of_this_month.cwday % 7
+calender_week_day = first_date.cwday % 7
 calender_week_day.times { print '   ' }
-days_in_month = Date.new(year, month, -1) - day_of_this_month
+days_in_month = last_day - first_date
 days_in_month.to_i.times do
-  if day_of_this_month.cwday == 6
-    puts day_of_this_month.strftime('%e')
-  elsif day_of_this_month.day == days_in_month.to_i
-    puts day_of_this_month.strftime('%e')
+  if first_date.saturday?
+    puts first_date.strftime('%e')
+  elsif first_date.day == days_in_month.to_i
+    puts first_date.strftime('%e')
   else
-    print day_of_this_month.strftime('%e') + " "
+    print first_date.strftime('%e') + " "
   end
-  day_of_this_month += 1
+  first_date += 1
 end
