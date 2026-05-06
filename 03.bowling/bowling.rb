@@ -5,12 +5,12 @@ score = ARGV[0]
 scores = score.split(',')
 shots = []
 
-scores.each do |s|
-  shots << if s == 'X' # strike
-             10
-           else
-             s.to_i
-           end
+shots = scores.map do |s|
+  if s == 'X' # strike
+    10
+  else
+    s.to_i
+  end
 end
 
 extra_sum = 0
