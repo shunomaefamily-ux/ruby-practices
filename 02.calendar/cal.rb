@@ -11,9 +11,8 @@ day_of_this_month = Date.new(year, month, 1)
 month_and_year = "#{day_of_this_month.strftime('%B')} #{day_of_this_month.year}"
 puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
-day_of_this_month.cwday.times do
-  print '   '
-end
+calender_week_day = day_of_this_month.cwday % 7
+calender_week_day.times { print '   ' }
 days_in_month = day_of_this_month.next_month.jd - day_of_this_month.jd
 days_in_month.times do
   if day_of_this_month.cwday == 6
