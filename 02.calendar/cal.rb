@@ -7,7 +7,7 @@ opts = OptionParser.new
 opts.on('-y', '--year input_year', Integer) { |y| year = y }
 opts.on('-m', '--month input_month', Integer) { |m| month = m }
 opts.parse!(ARGV)
-day_of_this_month = Date.new(option_year, option_month, 1)
+day_of_this_month = Date.new(year, month, 1)
 month_and_year = "#{day_of_this_month.strftime('%B')} #{day_of_this_month.year}"
 puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
