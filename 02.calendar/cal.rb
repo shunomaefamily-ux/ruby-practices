@@ -16,11 +16,11 @@ puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
 calender_week_day = first_date.cwday % 7
 calender_week_day.times { print '   ' }
-days_in_month = last_day - first_date
-days_in_month.to_i.times do
+days_in_month = last_day.day - first_date.day
+days_in_month.times do
   if first_date.saturday?
     puts first_date.strftime('%e')
-  elsif first_date.day == days_in_month.to_i
+  elsif first_date.day == days_in_month
     puts first_date.strftime('%e')
   else
     print first_date.strftime('%e') + " "
