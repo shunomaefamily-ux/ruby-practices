@@ -12,7 +12,7 @@ opts.parse!(ARGV)
 
 first_date = Date.new(year, month, 1)
 last_date = Date.new(year, month, -1)
-calender_week_day = first_date.cwday % 7
+calender_week_day = first_date.wday
 
 month_and_year = "#{ first_date.strftime('%B') } #{ first_date.year }"
 puts month_and_year.center(20)
