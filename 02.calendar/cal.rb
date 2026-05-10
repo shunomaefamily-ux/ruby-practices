@@ -9,12 +9,15 @@ opts = OptionParser.new
 opts.on('-y', '--year input_year', Integer) { |y| year = y }
 opts.on('-m', '--month input_month', Integer) { |m| month = m }
 opts.parse!(ARGV)
+
 first_date = Date.new(year, month, 1)
 last_day = Date.new(year, month, -1)
 calender_week_day = first_date.cwday % 7
+
 month_and_year = "#{ first_date.strftime('%B') } #{ first_date.year }"
 puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
+
 calender_week_day.times { print '   ' }
 days_in_month = last_day.day - first_date.day
 days_in_month.times do
