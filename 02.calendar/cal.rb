@@ -20,9 +20,7 @@ puts 'Su Mo Tu We Th Fr Sa'
 
 print '   ' * calender_week_day
 (first_date..last_date).each do |date|
-  if date.saturday?
-    puts date.strftime('%e')
-  elsif date.day == last_date.day
+  if date.saturday? || date.day == last_date.day
     puts date.strftime('%e')
   else
     print date.strftime('%e') + " "
