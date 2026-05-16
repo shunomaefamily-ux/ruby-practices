@@ -18,7 +18,7 @@ month_and_year = "#{first_date.strftime('%B')} #{first_date.year}"
 puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
 
-calender_week_day.times { print '   ' }
+print '   ' * calender_week_day
 last_date.day.times do
   if first_date.saturday?
     puts first_date.strftime('%e')
