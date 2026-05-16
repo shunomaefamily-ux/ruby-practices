@@ -19,13 +19,12 @@ puts month_and_year.center(20)
 puts 'Su Mo Tu We Th Fr Sa'
 
 print '   ' * calender_week_day
-last_date.day.times do
-  if first_date.saturday?
-    puts first_date.strftime('%e')
-  elsif first_date.day == last_date.day
-    puts first_date.strftime('%e')
+(first_date..last_date).each do |date|
+  if date.saturday?
+    puts date.strftime('%e')
+  elsif date.day == last_date.day
+    puts date.strftime('%e')
   else
-    print first_date.strftime('%e') + " "
+    print date.strftime('%e') + " "
   end
-  first_date += 1
 end
