@@ -11,12 +11,11 @@ extra_sum = 0
 a = 0
 9.times do
   if shots[a] == 10
-    extra_sum = extra_sum + shots[a + 1] + shots[a + 2]
     a += 1
-    next
+    extra_sum = extra_sum + shots[a] + shots[a + 1]
   else
-    extra_sum += shots[a + 2] if shots[a] + shots[a + 1] == 10
     a += 2
+    extra_sum += shots[a] if shots[a- 2] + shots[a - 1] == 10
   end
 end
 
