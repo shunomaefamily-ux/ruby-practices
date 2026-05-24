@@ -14,11 +14,7 @@ extra_sum = 9.times.sum do
     shots[a] + shots[a + 1]
   else
     a += 2
-    if shots[a- 2] + shots[a - 1] == 10
-      shots[a]
-    else
-      0
-    end
+    shots[a- 2] + shots[a - 1] == 10 ? shots[a] : 0
   end
 end
 
