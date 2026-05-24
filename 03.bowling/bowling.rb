@@ -7,14 +7,14 @@ shots = []
 
 shots = scores.map { |s| s == 'X' ? 10 : s.to_i }
 
-a = 0
+frame_first = 0
 bonus_scores = 9.times.sum do
-  if shots[a] == 10
-    a += 1
-    shots[a] + shots[a + 1]
+  if shots[frame_first] == 10
+    frame_first += 1
+    shots[frame_first] + shots[frame_first + 1]
   else
-    a += 2
-    shots[a- 2] + shots[a - 1] == 10 ? shots[a] : 0
+    frame_first += 2
+    shots[frame_first - 2] + shots[frame_first - 1] == 10 ? shots[frame_first] : 0
   end
 end
 
