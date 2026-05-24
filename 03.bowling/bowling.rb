@@ -8,7 +8,7 @@ shots = []
 shots = scores.map { |s| s == 'X' ? 10 : s.to_i }
 
 a = 0
-extra_sum = 9.times.sum do
+bonus_scores = 9.times.sum do
   if shots[a] == 10
     a += 1
     shots[a] + shots[a + 1]
@@ -18,4 +18,4 @@ extra_sum = 9.times.sum do
   end
 end
 
-puts extra_sum + shots.sum
+puts bonus_scores + shots.sum
