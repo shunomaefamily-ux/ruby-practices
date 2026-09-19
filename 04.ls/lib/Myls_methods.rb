@@ -2,30 +2,28 @@
 
 
 module MylsMethods
-  def jaks(y,column,show_hidden = false)
-      index = 0
-      y = reject_hidden_files(y,show_hidden)
-   x = Array.new(column) { Array.new((y.size.to_f/column).ceil, nil) }
-    x.each_with_index do |cols, row|
+  def build_display(all_file_names,column,show_hidden = false)
+    directory_file_names = show_hidden ? all_file_names : reject_hidden_files(all_file_names)
+    display_cells = Array.new(column) { Array.new((directory_file_names.size.to_f/column).ceil, nil) }
+    filled_display_cells = fill_cells(display_cells,directory_file_names)
+    format_display_cells(filled_display_cells)
+  end
+
+  def reject_hidden_files(all_file_names)
+      all_file_names.reject{|file_name|file_name.start_with?(".")}
+  end
+
+  def fill_cells(display_cells,directory_file_names)
+    index = 0
+    display_cells.each_with_index do |cols, row|
       cols.each_with_index do |cell, col|
-        x[row][col] = y[index]
+        display_cells[row][col] = directory_file_names[index]
         index = index +1
       end
     end
-   xx = x.transpose
-   xx = xx.map{|file| file.compact}
-   xx
-
-
   end
 
-  def reject_hidden_files(yf,show_hidden)
-      if show_hidden
-      hh = yf.reject{|faile_name|faile_name.start_with?(".")}
-      return hh
-      end
-      yf
-    end
-
-
+  def format_display_cells(display_cells)
+    display_cells.transpose.map{|files| files.compact}
+  end
 end

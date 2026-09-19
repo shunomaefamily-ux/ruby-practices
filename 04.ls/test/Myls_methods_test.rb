@@ -12,16 +12,16 @@ class MylsMethodsTest < Minitest::Test
        y = ["Gemfile", "Gemfile.lock", "Procfile", "README.md", "babel.config.js", "bin", "config", "config.ru", "log", "package.json", "postcss.config.js"]
     
 
-    assert_equal [["Gemfile", "babel.config.js", "log"], ["Gemfile.lock", "bin", "package.json"], ["Procfile", "config", "postcss.config.js"], ["README.md", "config.ru"]], jaks(y,options[:column])
+    assert_equal [["Gemfile", "babel.config.js", "log"], ["Gemfile.lock", "bin", "package.json"], ["Procfile", "config", "postcss.config.js"], ["README.md", "config.ru"]], build_display(y,options[:column])
 
     end
 
     def test_jaksllll
-      options = {  column: 3, show_hidden: true}
+      options = {  column: 3, show_hidden: false}
        y = ["Gemfile", "Gemfile.lock", "Procfile", "README.md", "babel.config.js", "bin", "config", "config.ru", "log", "package.json", ".postcss.config.js"]
     
 
-    assert_equal [["Gemfile", "babel.config.js", "log"], ["Gemfile.lock", "bin", "package.json"], ["Procfile", "config"], ["README.md", "config.ru"]], jaks(y,options[:column],options[:show_hidden])
+    assert_equal [["Gemfile", "babel.config.js", "log"], ["Gemfile.lock", "bin", "package.json"], ["Procfile", "config"], ["README.md", "config.ru"]], build_display(y,options[:column],options[:show_hidden])
 
     end
 

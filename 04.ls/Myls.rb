@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 require_relative './lib/Myls_methods'
+include MylsMethods
 class Myls
-  options{  column: 3, show_hidden: false}
-  y = Dir.children('.')
+  options = {  column: 3, show_hidden: false}
+  all_file_names = Dir.children('.')
 
-  put_directry(Dir.children)
-  include MylsMethods
+  build_display(all_file_names,options[:column],options[:show_hidden]).each { |hhh|
+ puts hhh }
+
 end
-
-myls = Myls.new
-
-myls.jaks
