@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module MylsMethods
+class DisplayBuilder
   def build_display(all_file_names, column, show_hidden: false)
     directory_file_names = show_hidden ? all_file_names : reject_hidden_files(all_file_names)
     display_cells = Array.new(column) { Array.new((directory_file_names.size.to_f / column).ceil, nil) }
