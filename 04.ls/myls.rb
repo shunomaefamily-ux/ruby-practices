@@ -9,7 +9,7 @@ class Myls
   name_longest = all_file_names.map(&:length).max
 
   builder.build_display(
-    all_file_names,
+    all_file_names.sort,
     options[:column],
     show_hidden: options[:show_hidden]
   ).each do |file_name|
