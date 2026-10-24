@@ -7,7 +7,7 @@ class Myls
   builder = DisplayBuilder.new
   options = { column: 3, show_hidden: false }
   all_file_names = Dir.children('.')
-  name_longest = all_file_names.map(&:length).max
+  all_file_names.map(&:length).max
 
   builder.build_display(
     all_file_names.sort,
