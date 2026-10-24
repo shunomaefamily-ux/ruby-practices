@@ -3,7 +3,7 @@
 class DisplayBuilder
   attr_reader :column_widths
 
-  def build_display(all_file_names, column, show_hidden: false)
+  def build_display(all_file_names, column:, show_hidden: false)
     directory_file_names = show_hidden ? all_file_names : reject_hidden_files(all_file_names)
     display_cells = Array.new(column) { Array.new((directory_file_names.size.to_f / column).ceil, nil) }
     filled_display_cells = fill_cells(display_cells, directory_file_names)
