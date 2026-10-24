@@ -15,11 +15,11 @@ class DisplayBuilder
   end
 
   def fill_cells(display_cells, directory_file_names)
-    index = 0
-    display_cells.each_with_index do |cols, row|
-      cols.each_index do |col|
-        display_cells[row][col] = directory_file_names[index]
-        index += 1
+    file_index = 0
+    display_cells.each_with_index do |cols, cells_index_row|
+      cols.each_index do |cells_index_col|
+        display_cells[cells_index_row][cells_index_col] = directory_file_names[file_index]
+        file_index += 1
       end
     end
   end
