@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class DisplayBuilder
+  attr_reader :column_widths
   def build_display(all_file_names, column, show_hidden: false)
     directory_file_names = show_hidden ? all_file_names : reject_hidden_files(all_file_names)
     display_cells = Array.new(column) { Array.new((directory_file_names.size.to_f / column).ceil, nil) }
@@ -23,6 +24,7 @@ class DisplayBuilder
   end
 
   def format_display_cells(display_cells)
+    @column_widths = display_cells.map(&:compact).map{|cell| cell.map(&:length)}.map(&:max)
     display_cells.transpose.map(&:compact)
   end
 end

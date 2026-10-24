@@ -14,6 +14,6 @@ class Myls
     options[:column],
     show_hidden: options[:show_hidden]
   ).each do |file_name|
-    puts file_name.map { |file| file.ljust(name_longest) }.join(' ')
+    puts file_name.map.with_index { |file, index| file.ljust(builder.column_widths[index]) }.join(' ')
   end
 end
